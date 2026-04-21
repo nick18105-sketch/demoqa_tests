@@ -19,3 +19,16 @@
 
 ## ▶️ Run tests:
 ./gradlew test
+
+## 🚀 Technologies
+- Java
+- Selenide
+- JUnit5
+- Gradle
+
+## 📂 Tests
+- Practice Form (DemoQA)
+- GitHub Hover Menu
+- Drag and Drop
+
+## ▶️ Run tests
