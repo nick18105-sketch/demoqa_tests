@@ -1,5 +1,7 @@
+```groovy
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '4.1.0'
 }
 
 group = 'org.example'
@@ -16,9 +18,17 @@ dependencies {
 
     testImplementation "com.codeborne:selenide:6.19.1"
     testImplementation "io.github.bonigarcia:webdrivermanager:5.7.0"
-    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation "com.github.javafaker:javafaker:1.0.2"
     testImplementation "io.qameta.allure:allure-selenide:2.29.1"
     testImplementation "io.qameta.allure:allure-junit5:2.29.1"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
 }
 
 test {
