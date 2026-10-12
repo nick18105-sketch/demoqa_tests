@@ -11,19 +11,19 @@ public class GithubWikiTest extends BaseTest {
     @Test
     void checkSoftAssertionsPage() {
 
-        open("https://github.com/selenide/selenide");
-
-        $("#wiki-tab").click();
+        open("https://github.com/selenide/selenide/wiki");
 
         $("#wiki-pages-box").shouldBe(visible);
 
         $("#wiki-pages-filter").setValue("SoftAssertions");
 
-        if ($(".wiki-more-pages-link").exists()) {
-            $(".wiki-more-pages-link").click();
-        }
+        $("#wiki-pages-box")
+                .shouldHave(text("SoftAssertions"));
 
-        $("#wiki-pages-box").$(byText("SoftAssertions")).click();
+        $("#wiki-pages-box")
+                .$(byText("SoftAssertions"))
+                .shouldBe(visible)
+                .click();
 
         $(".markdown-body").shouldHave(text("JUnit5"));
     }
