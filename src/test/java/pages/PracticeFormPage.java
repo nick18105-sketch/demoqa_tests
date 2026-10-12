@@ -31,7 +31,9 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage selectGender(String gender) {
-        $(byText(gender)).click();
+        $("#genterWrapper")
+                .$(byText(gender))
+                .click();
         return this;
     }
 
