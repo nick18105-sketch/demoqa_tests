@@ -10,21 +10,22 @@ public class GithubHoverTest extends BaseTest {
 
     @Test
     void checkEnterprisePage() {
-
-        // Сначала открываем браузер!
         open("https://github.com");
 
-        // Потом можно чистить
         clearBrowserCookies();
         clearBrowserLocalStorage();
+        refresh();
 
-        // Hover
-        $(byText("Solutions")).shouldBe(visible).hover();
+        $("body").shouldBe(visible);
 
-        // Click
-        $(byText("Enterprise")).shouldBe(visible).click();
+        $(byText("Solutions"))
+                .shouldBe(visible)
+                .hover();
 
-        // Проверка
+        $(byText("Enterprise"))
+                .shouldBe(visible)
+                .click();
+
         $("body").shouldHave(text("AI-powered"));
     }
 }
