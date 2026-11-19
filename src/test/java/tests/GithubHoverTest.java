@@ -18,14 +18,17 @@ public class GithubHoverTest extends BaseTest {
 
         $("body").shouldBe(visible);
 
-        $(byText("Solutions"))
+        $("button[aria-controls='_R_1nd_']")
                 .shouldBe(visible)
                 .hover();
 
-        $(byText("Enterprise"))
+        $("button[aria-controls='_R_1nd_']")
+                .shouldHave(attribute("aria-expanded", "true"));
+
+        $(byText("Enterprises"))
                 .shouldBe(visible)
                 .click();
 
-        $("body").shouldHave(text("AI-powered"));
+        $("body").shouldHave(text("GitHub for Enterprise"));
     }
 }
