@@ -12,6 +12,6 @@ public class GithubIssueStepTest extends BaseTest {
 
         githubSteps.openIssue();
 
-        githubSteps.checkIssueName("The future of building happens together");
+        githubSteps.checkIssueName("Allure test issue");
     }
 }
