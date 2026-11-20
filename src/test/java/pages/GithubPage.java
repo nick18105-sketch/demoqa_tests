@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 public class GithubPage {
 
     public GithubPage openPage() {
-        open("https://github.com/");
+        open("https://github.com/nick18105-sketch/demoqa_tests/issues/1");
         return this;
     }
 
