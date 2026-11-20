@@ -20,7 +20,7 @@ public class GithubHoverTest extends BaseTest {
 
         $("button[aria-controls='_R_1nd_']")
                 .shouldBe(visible)
-                .hover();
+                .click();
 
         $("button[aria-controls='_R_1nd_']")
                 .shouldHave(attribute("aria-expanded", "true"));
